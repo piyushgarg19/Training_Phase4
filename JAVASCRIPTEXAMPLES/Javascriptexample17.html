@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+    <h1>Map Example</h1>
+    <button onclick="addKeyValue()">Add Key-Value</button>
+    <div id="demo"></div>
+    <script>
+        const map = new Map();
+        function addKeyValue() {
+            const key = prompt("Enter a key:");
+            const value = prompt("Enter a value:");
+            
+            if (key && value) {
+                map.set(key, value);
+                displayMap();
+            } else {
+                alert("Please provide both key and value.");
+            }
+        }
+        function displayMap() {
+            const mapContainer = document.getElementById("demo");
+            mapContainer.innerHTML = "";
+            for (const [key, value] of map) {
+                const entry = document.createElement("p");
+                entry.textContent = `${key}: ${value}`;
+                mapContainer.appendChild(entry);
+            }
+        }
+    </script>
+</body>
+</html>

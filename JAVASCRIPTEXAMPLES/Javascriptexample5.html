@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<body>
+    <script>
+    function multipication(num1,num2){
+        var element=document.getElementById("pans");
+        element.innerText+=num1*num2;
+        document.getElementById("txtans").value=num1*num2;
+    }
+</script>
+<button onclick="multipication(10,20)">click</button>
+<p id="pans">product=</p>
+<input type="text" id="txtans" readonly>
+</body>
+</html>

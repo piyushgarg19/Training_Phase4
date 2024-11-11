@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+
+<button id="inputButton">Get User Input</button>
+
+<script>
+document.getElementById("inputButton").addEventListener("click", function() {
+  const userInputPromise = new Promise((resolve, reject) => {
+    const expectedInput = prompt("please enter excepted input")
+    const userInput = prompt("Please enter the  user input:");
+
+    if (userInput === expectedInput) {
+      resolve(); 
+    } else {
+      reject(); 
+    }
+  });
+
+  userInputPromise.then(function(){alert('Success');})
+  .catch(function(){alert('some error has occured');});
+});
+</script>
+
+</body>
+</html>

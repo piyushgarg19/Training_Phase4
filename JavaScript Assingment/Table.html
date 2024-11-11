@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<head>
+    <title>table</title>
+    <script type="text/javascript">
+        function Table() {
+            
+            var num = (document.getElementById("txtNumber").value);
+            for (var i = 1; i <= 10; i++) {
+                var tablePrint = document.getElementById("table");
+                tablePrint.innerHTML += num * i + "<br/>";
+                
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Table of a given number</h1>
+    <p><input type="text" id="txtNumber" placeholder="Enter number" /></p>
+    <p>
+        <input type="button" value="print" onclick="Table()" />
+      
+    </p>
+
+    <p id="table"></p>
+</body>
+</html>

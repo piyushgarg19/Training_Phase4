@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Calculator</title>
+</head>
+<body>
+    <h2>Simple Calculator</h2>
+    <label for="number1">Number 1:</label>
+    <input type="text" id="number1"><br><br>
+    
+    <label for="number2">Number 2:</label>
+    <input type="text" id="number2"><br><br>
+    
+    <select id="operation">
+        <option value="addition">Addition</option>
+        <option value="division">Division</option>
+    </select>
+    <button onclick="calculate()">Calculate</button>
+    <p id="result"></p>
+
+    <script>
+        function calculate() {
+            var num1 = parseFloat(document.getElementById("num1").value);
+            var num2 = parseFloat(document.getElementById("num2").value);
+            var operation = document.getElementById("operation").value;
+            var resultElement = document.getElementById("result");
+            
+            switch (operation) {
+                case "addition":
+                    var result = num1 + num2;
+                    resultElement.textContent = "Result: " + result;
+                    break;
+                case "division":
+                    if (num2 === 0) {
+                        resultElement.textContent = "Cannot divide by zero!";
+                    } else {
+                        var result = num1 / num2;
+                        resultElement.textContent = "Result: " + result;
+                    }
+                    break;
+                default:
+                    resultElement.textContent = "Invalid operation";
+                    break;
+            }
+        }
+    </script>
+</body>
+</html>

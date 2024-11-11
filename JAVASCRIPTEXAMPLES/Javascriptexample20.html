@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<body>
+    <script>
+        let person={
+            name:'John Doe',
+            getName: function(){
+                console.log(this.name);
+            }
+        };
+        let f=person.getName.bind(person);
+        setTimeout(f,1000);
+    </script>
+</body>
+</html>
